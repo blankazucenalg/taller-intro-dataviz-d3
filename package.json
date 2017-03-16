@@ -1,0 +1,30 @@
+{
+  "name": "dc-dbox-d3",
+  "version": "1.0.0",
+  "description": "Dboxjs and D3js meetup",
+  "main": "index.html",
+  "scripts": {
+    "test": "npm test "
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/blankazucenalg/ds-dbox-d3js.git"
+  },
+  "keywords": [
+    "dbox",
+    "dboxjs",
+    "d3",
+    "d3js",
+    "dataviz",
+    "visualizations"
+  ],
+  "author": "Azucena López <blankazucenalg@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/blankazucenalg/ds-dbox-d3js/issues"
+  },
+  "homepage": "https://github.com/blankazucenalg/ds-dbox-d3js#readme",
+  "dependencies": {
+    "dboxjs": "0.0.1-0.1.0"
+  }
+}

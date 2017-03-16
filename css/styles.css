@@ -39,15 +39,24 @@ body {
   margin-left: -0.75rem;
   margin-right: -0.75rem;
   width: 110%;
-  height: 300px;
+  height: 200px;
   background: black;
   font-family: monospace;
   color: #fafafa;
   padding: 0.75rem;
   position: fixed;
   bottom: 0px;
+  overflow-y: auto;
+  overflow-x: hidden;
 }
 
 #console-output .bash{
   color: lightgreen;
+}
+
+.d3-tip {
+  background: #666;
+  color: white;
+  padding: 4px;
+  border-radius: 5px;
 }
