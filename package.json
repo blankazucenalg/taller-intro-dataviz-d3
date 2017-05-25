@@ -25,6 +25,6 @@
   },
   "homepage": "https://github.com/blankazucenalg/ds-dbox-d3js#readme",
   "dependencies": {
-    "dboxjs": "0.0.1-0.1.0"
+    "dboxjs": "0.0.2"
   }
 }

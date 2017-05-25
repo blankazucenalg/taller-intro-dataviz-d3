@@ -60,3 +60,7 @@ body {
   padding: 4px;
   border-radius: 5px;
 }
+
+.line {
+  fill: none !important;
+}
