@@ -5,23 +5,23 @@
 // Ejemplo 1
 
 // d3.select(selection).attr(name [,value]); 
- d3.selectAll('#example1 p').style('color','orange');
+ //d3.selectAll('#example1 p').style('color','orange');
 
 
 // Ejemplo 2
 
 //Iteracion con d3
- d3.selectAll('#example2 p')
-   .each(function(d){
-     d3.select(this).style('font-size', (Math.random() * 40) + 'px');
-   });
+// d3.selectAll('#example2 p')
+//   .each(function(d){
+//     d3.select(this).style('font-size', (Math.random() * 40) + 'px');
+//   });
 
 
 // Ejercicio 1
 
 // d3.selectAll(<-- Todos los div dentro de #ejercicio1 -->).style("background", <-- Color -->);
 // Recuerda el selector del hijo en la n-ésima posición div:nth-child(2)
-d3.selectAll('#ejercicio1').style('background', 'green');
+
 
 // Ejemplo 3
 
