@@ -5,18 +5,18 @@
 // Ejemplo 1
 
 // d3.select(selection).attr(name [,value]); 
-d3.selectAll('#example1 p')
-  .attr('id', 'parrafo_especial')
-  .style('color','orange');
+// d3.selectAll('#example1 p')
+//   .attr('id', 'parrafo_especial')
+//   .style('color','orange');
 
 
 // Ejemplo 2
 
 //Iteracion con d3
-d3.selectAll('#example2 p')
-  .style('font-size', function(d,i) {
-    return (Math.random() * 40) + 'px';
-  });
+// d3.selectAll('#example2 p')
+//   .style('font-size', function(d,i) {
+//     return (Math.random() * 40) + 'px';
+//   });
   /*
   .each(function(d){
       d3.select(this).style('font-size', (Math.random() * 40) + 'px');
@@ -29,53 +29,52 @@ d3.selectAll('#example2 p')
 // d3.selectAll(<-- Todos los div dentro de #ejercicio1 -->)
 //.style("background", <-- Color -->);
 // Recuerda el selector del hijo en la n-ésima posición div:nth-child(2)
-d3.selectAll('#ejercicio1 div')
-  .style('background', 'steelblue');
-d3.select('#ejercicio1 div')
-  .style('color', 'white');
-d3.select('#ejercicio1 div:nth-child(2)').attr('class', 'circle')
-  .style('color', 'pink');
+// d3.selectAll('#ejercicio1 div')
+//   .style('background', 'steelblue');
+// d3.select('#ejercicio1 div')
+//   .style('color', 'white');
+// d3.select('#ejercicio1 div:nth-child(2)').attr('class', 'circle')
+//   .style('color', 'pink');
 
 
 // Ejemplo 3
 
-var data = ['Parrafo A', 'Párrafo B', 'Párrafo C', 'Párrafo D']; 
-//
-var parrafos = d3.select('#example3 .panel-body')
-  .selectAll('p')
-  .data(data)
-
-  parrafos
-    .text(function(d) {return d; })
-
-  
-  parrafos.enter()
-      .append('p')
-      .text(function(d){ return d; });
+// var data = ['Parrafo A', 'Párrafo B', 'Párrafo C', 'Párrafo D']; 
+// 
+// var parrafos = d3.select('#example3 .panel-body')
+//   .selectAll('p')
+//   .data(data)
+// 
+//   parrafos
+//     .text(function(d) {return d; })
+// 
+//   
+//   parrafos.enter()
+//       .append('p')
+//       .text(function(d){ return d; });
 
 
 // Ejemplo 4
 
-var data = ['Parrafo A', 'Párrafo C', 'Párrafo D', 'Párrafo E', 'Párrafo F']; 
-//
-var selection = d3.select('#example4 .panel-body')
-  .selectAll('p')
-  .data(data);
-//
-//// UPDATE
-selection
-  .text(function(d){return d;}); 
-//
-//// ENTER
-selection
-  .enter()
-    .append('p')
-    .text(function(d){return d;}); 
-
-//// EXIT
-selection
-  .exit()
-    .remove();
+// var data = ['Parrafo A', 'Párrafo C', 'Párrafo D', 'Párrafo E', 'Párrafo F']; 
+// 
+// var selection = d3.select('#example4 .panel-body')
+//   .selectAll('p')
+//   .data(data);
+// 
+// // UPDATE
+// selection
+//   .text(function(d){return d;}); 
+// // ENTER
+// selection
+//   .enter()
+//     .append('p')
+//     .text(function(d){return d;}); 
+// 
+// // EXIT
+// selection
+//   .exit()
+//     .remove();
 
 
 // Ejercicio 2
@@ -121,7 +120,7 @@ d3.select('#ejercicio2').selectAll('div')
     .style('padding', '5px')
     .text(function(d, i) {
       return d.nombre + ': ' + d.porcentaje;
-    })
+    });
 
 
 
