@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Ejemplos d3</title>
+  <link rel="stylesheet" type="text/css" href="css/styles.css">
+</head>
+<body>
+  <div class="container">
+  <div class="row ng-scope" id="charts">
+    <div class="col-xs-12">
+      <h2>Graficando datos</h2>
+      <h3>Cuando los elementos y datos toman sentido</h3>
+      <div class="row">
+        <div class="col-xs-12">
+          <h4>Ejemplo 1</h4>
+        </div>
+        <div class="col-xs-12">
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <code>#ejemplo1</code>
+            </div>
+            <div class="panel-body" id="ejemplo1"></div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-12">
+          <h4>Ejercicio 1</h4>
+          <ul>
+            <li>Retomando el ejercicio de la sección anterior. A cada circulo ponle como valor de su propiedad width y height,
+              el valor del dato. Recuerda que las propiedades se modifican usando el método
+              <code>.attr(name, value);</code>
+            </li>
+          </ul>
+        </div>
+        <div class="col-xs-12">
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <code>#ejercicio1</code>
+            </div>
+            <div class="panel-body" id="ejercicio1"></div>
+          </div>
+        </div>
+      </div>
+      <h3>¿Y si tengo los datos en un CSV / TSV / JSON?</h3>
+      <p>D3.js permite importar archivos de datos directamente usando los métodos</p>
+      <div class="panel panel-default">
+        <div class="panel-heading">Métodos</div>
+        <div class="panel-body">
+          <pre>d3.csv(url, callback);
+            d3.tsv(url, callback);
+            d3.json(url, callback);
+            d3.dsv(url, callback);</pre>
+          <p>El callback siempre recibe el arreglo de datos finales y si existió algun error</p>
+          <pre>function(data, error){  // Qué hago con los datos?
+          }</pre>
+        </div>
+      </div>
+      <h3>Trabajando con divs</h3>
+      <div class="row">
+        <div class="col-xs-12">
+          <h4>Causas de muerte en la Ciudad de México en 2013</h4>
+          <div class="panel panel-default">
+            <div class="panel-heading">Data.csv</div>
+            <div class="panel-body">
+              <pre>              <table>
+                  <tbody><tr>
+                    <td>Causas</td>
+                    <td>Defunciones</td>
+                  </tr>
+                  <!-- ngRepeat: d in dataBars --><tr ng-repeat="d in dataBars" class="ng-scope" style="">
+                    <td class="ng-binding">Enfermedades del corazón </td>
+                    <td class="ng-binding">12234</td>
+                  </tr><!-- end ngRepeat: d in dataBars --><tr ng-repeat="d in dataBars" class="ng-scope">
+                    <td class="ng-binding">Enfermedades isquémicas del corazón </td>
+                    <td class="ng-binding">9280</td>
+                  </tr><!-- end ngRepeat: d in dataBars --><tr ng-repeat="d in dataBars" class="ng-scope">
+                    <td class="ng-binding">Diabetes mellitus </td>
+                    <td class="ng-binding">9461</td>
+                  </tr><!-- end ngRepeat: d in dataBars --><tr ng-repeat="d in dataBars" class="ng-scope">
+                    <td class="ng-binding">Tumores malignos </td>
+                    <td class="ng-binding">7685</td>
+                  </tr><!-- end ngRepeat: d in dataBars --><tr ng-repeat="d in dataBars" class="ng-scope">
+                    <td class="ng-binding">Enfermedades cerebrovasculares </td>
+                    <td class="ng-binding">3092</td>
+                  </tr><!-- end ngRepeat: d in dataBars --><tr ng-repeat="d in dataBars" class="ng-scope">
+                    <td class="ng-binding">Enfermedades del hígado </td>
+                    <td class="ng-binding">2749</td>
+                  </tr><!-- end ngRepeat: d in dataBars --><tr ng-repeat="d in dataBars" class="ng-scope">
+                    <td class="ng-binding">Enfermedad alcohólica del hígado </td>
+                    <td class="ng-binding">926</td>
+                  </tr><!-- end ngRepeat: d in dataBars --><tr ng-repeat="d in dataBars" class="ng-scope">
+                    <td class="ng-binding">Influenza y neumonía </td>
+                    <td class="ng-binding">2402</td>
+                  </tr><!-- end ngRepeat: d in dataBars --><tr ng-repeat="d in dataBars" class="ng-scope">
+                    <td class="ng-binding">Enfermedades pulmonares obstructivas crónicas </td>
+                    <td class="ng-binding">1839</td>
+                  </tr><!-- end ngRepeat: d in dataBars --><tr ng-repeat="d in dataBars" class="ng-scope">
+                    <td class="ng-binding">Accidentes </td>
+                    <td class="ng-binding">1714</td>
+                  </tr><!-- end ngRepeat: d in dataBars --><tr ng-repeat="d in dataBars" class="ng-scope">
+                    <td class="ng-binding">De tráfico de vehículos de motor </td>
+                    <td class="ng-binding">881</td>
+                  </tr><!-- end ngRepeat: d in dataBars --><tr ng-repeat="d in dataBars" class="ng-scope">
+                    <td class="ng-binding">Agresiones </td>
+                    <td class="ng-binding">1093</td>
+                  </tr><!-- end ngRepeat: d in dataBars --><tr ng-repeat="d in dataBars" class="ng-scope">
+                    <td class="ng-binding">Insuficiencia renal </td>
+                    <td class="ng-binding">897</td>
+                  </tr><!-- end ngRepeat: d in dataBars --><tr ng-repeat="d in dataBars" class="ng-scope">
+                    <td class="ng-binding">Otras causas </td>
+                    <td class="ng-binding">9544</td>
+                  </tr><!-- end ngRepeat: d in dataBars -->
+                </tbody></table></pre>
+              <div class="row">
+                <small class="col-xs-6 pull-left">Fuente: INEGI. Estadísticas de mortalidad. Distrito Federal, 2013</small>
+                <small class="col-xs-6 pull right text-right">
+                  <a href="assets/data/CausasDeMortalidadDF2013.csv">CSV
+                    <span class="glyphicon glyphicon-download"></span>
+                  </a>
+                </small>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-xs-12">
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <code>#chart-bar</code>
+            </div>
+            <div class="panel-body">
+              <div id="chart-bar"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <hr>
+      <h3>Features</h3>
+      <div class="row">
+        <div class="col-xs-12">
+          <h4>Escalas</h4>
+          <p>
+            <a href="http://www.jeromecukier.net/blog/2011/08/11/d3-scales-and-color/">http://www.jeromecukier.net/blog/2011/08/11/d3-scales-and-color/</a>
+          </p>
+        </div>
+        <div class="col-xs-12">
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <code>#scales</code>
+            </div>
+            <div class="panel-body">
+              <div id="scales"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-12">
+          <h4>Eventos</h4>
+          <p>
+            <a href="https://developer.mozilla.org/en-US/docs/Web/Events#Standard_events">https://developer.mozilla.org/en-US/docs/Web/Events#Standard_events</a>
+          </p>
+        </div>
+        <div class="col-xs-12">
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <code>#events</code>
+            </div>
+            <div class="panel-body">
+              <div id="events"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <hr>
+      <h3>D3 + SVG</h3>
+      <p>
+        <a href="https://developer.mozilla.org/en-US/docs/Web/SVG/Element">https://developer.mozilla.org/en-US/docs/Web/SVG/Element</a>
+      </p>
+      <hr>
+      <h3>Ejercicio 2 / Ejemplo 2</h3>
+      <ul>
+        <li>Establece la escala a usar para las distancias de los planetas al Sol.</li>
+        <li>Genera una lista (arreglo) con los nombres de los planetas.</li>
+        <li>Establece la escala
+          <strong>ordinal</strong>a usar para cada uno de los planetas.</li>
+        <li>Genera circulos de SVG para cada uno de los planetas incluidos en los datos</li>
+        <li>Haz que la distancia (propiedad cx) sea proporcional según la escala</li>
+        <li>Genera otra escala que tome en cuenta el alto
+          <code>height</code> del contenedor y los valores mínimo y máximo del diámetro de los planetas.</li>
+        <li>Establece el tamaño de los planetas según su diámetro usando esa escala.</li>
+      </ul>
+      <div class="row">
+        <div class="col-xs-12">
+          <h4>Distancia de los planetas al sol</h4>
+          <div class="panel panel-default">
+            <div class="panel-heading">Data.csv</div>
+            <div class="panel-body">
+              <pre>              <table>
+                  <tbody><tr>
+                    <td>Planeta</td>
+                    <td>Distancia media al Sol (Km)</td>
+                    <td>Diámetro (Km)</td>
+                  </tr>
+                  <!-- ngRepeat: d in planets --><tr ng-repeat="d in planets" class="ng-scope" style="">
+                    <td class="ng-binding">Mercurio </td>
+                    <td class="ng-binding">57909175</td>
+                    <td class="ng-binding">4880</td>
+                  </tr><!-- end ngRepeat: d in planets --><tr ng-repeat="d in planets" class="ng-scope">
+                    <td class="ng-binding">Venus </td>
+                    <td class="ng-binding">108208930</td>
+                    <td class="ng-binding">12104</td>
+                  </tr><!-- end ngRepeat: d in planets --><tr ng-repeat="d in planets" class="ng-scope">
+                    <td class="ng-binding">Tierra </td>
+                    <td class="ng-binding">149597870</td>
+                    <td class="ng-binding">12756</td>
+                  </tr><!-- end ngRepeat: d in planets --><tr ng-repeat="d in planets" class="ng-scope">
+                    <td class="ng-binding">Marte </td>
+                    <td class="ng-binding">227936640</td>
+                    <td class="ng-binding">6794</td>
+                  </tr><!-- end ngRepeat: d in planets --><tr ng-repeat="d in planets" class="ng-scope">
+                    <td class="ng-binding">Júpiter </td>
+                    <td class="ng-binding">778412010</td>
+                    <td class="ng-binding">142984</td>
+                  </tr><!-- end ngRepeat: d in planets --><tr ng-repeat="d in planets" class="ng-scope">
+                    <td class="ng-binding">Saturno </td>
+                    <td class="ng-binding">1426725400</td>
+                    <td class="ng-binding">108728</td>
+                  </tr><!-- end ngRepeat: d in planets --><tr ng-repeat="d in planets" class="ng-scope">
+                    <td class="ng-binding">Urano </td>
+                    <td class="ng-binding">2870972200</td>
+                    <td class="ng-binding">51118</td>
+                  </tr><!-- end ngRepeat: d in planets --><tr ng-repeat="d in planets" class="ng-scope">
+                    <td class="ng-binding">Neptuno </td>
+                    <td class="ng-binding">4498252900</td>
+                    <td class="ng-binding">49532</td>
+                  </tr><!-- end ngRepeat: d in planets -->
+                </tbody></table></pre>
+              <div class="row">
+                <small class="col-xs-6 pull-left">Fuente: Wikipedia, 2016</small>
+                <small class="col-xs-6 pull right text-right">
+                  <a href="assets/data/planetas.csv">CSV
+                    <span class="glyphicon glyphicon-download"></span>
+                  </a>
+                </small>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-xs-12">
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <code>#ejercicio2</code>
+            </div>
+            <div class="panel-body planetas" id="ejercicio2"></div>
+          </div>
+        </div>
+      </div>
+      <hr>
+      <h3>Gráficas reutilizables como una función</h3>
+      <div class="row">
+        <div class="col-xs-12">
+          <h4>Marcas de autos más vendidos en febrero de 2016</h4>
+          <div class="panel panel-default">
+            <div class="panel-heading">Data.csv</div>
+            <div class="panel-body">
+              <pre>              <table>
+                  <tbody><tr>
+                    <td>Grupo automotriz</td>
+                    <td>Cantidad</td>
+                  </tr>
+                  <!-- ngRepeat: d in dataSvg --><tr ng-repeat="d in dataSvg" class="ng-scope" style="">
+                    <td class="ng-binding">ACURA </td>
+                    <td class="ng-binding">148</td>
+                  </tr><!-- end ngRepeat: d in dataSvg --><tr ng-repeat="d in dataSvg" class="ng-scope">
+                    <td class="ng-binding">BMW </td>
+                    <td class="ng-binding">1075</td>
+                  </tr><!-- end ngRepeat: d in dataSvg --><tr ng-repeat="d in dataSvg" class="ng-scope">
+                    <td class="ng-binding">FCA MÉXICO </td>
+                    <td class="ng-binding">7422</td>
+                  </tr><!-- end ngRepeat: d in dataSvg --><tr ng-repeat="d in dataSvg" class="ng-scope">
+                    <td class="ng-binding">FORD MOTOR </td>
+                    <td class="ng-binding">7209</td>
+                  </tr><!-- end ngRepeat: d in dataSvg --><tr ng-repeat="d in dataSvg" class="ng-scope">
+                    <td class="ng-binding">GENERAL MOTORS </td>
+                    <td class="ng-binding">18106</td>
+                  </tr><!-- end ngRepeat: d in dataSvg --><tr ng-repeat="d in dataSvg" class="ng-scope">
+                    <td class="ng-binding">HONDA </td>
+                    <td class="ng-binding">6362</td>
+                  </tr><!-- end ngRepeat: d in dataSvg --><tr ng-repeat="d in dataSvg" class="ng-scope">
+                    <td class="ng-binding">HYUNDAI </td>
+                    <td class="ng-binding">2307</td>
+                  </tr><!-- end ngRepeat: d in dataSvg --><tr ng-repeat="d in dataSvg" class="ng-scope">
+                    <td class="ng-binding">INFINITI </td>
+                    <td class="ng-binding">161</td>
+                  </tr><!-- end ngRepeat: d in dataSvg --><tr ng-repeat="d in dataSvg" class="ng-scope">
+                    <td class="ng-binding">ISUZU </td>
+                    <td class="ng-binding">95</td>
+                  </tr><!-- end ngRepeat: d in dataSvg --><tr ng-repeat="d in dataSvg" class="ng-scope">
+                    <td class="ng-binding">JAGUAR </td>
+                    <td class="ng-binding">19</td>
+                  </tr><!-- end ngRepeat: d in dataSvg --><tr ng-repeat="d in dataSvg" class="ng-scope">
+                    <td class="ng-binding">KIA </td>
+                    <td class="ng-binding">3146</td>
+                  </tr><!-- end ngRepeat: d in dataSvg --><tr ng-repeat="d in dataSvg" class="ng-scope">
+                    <td class="ng-binding">LAND ROVER </td>
+                    <td class="ng-binding">103</td>
+                  </tr><!-- end ngRepeat: d in dataSvg --><tr ng-repeat="d in dataSvg" class="ng-scope">
+                    <td class="ng-binding">LINCOLN </td>
+                    <td class="ng-binding">180</td>
+                  </tr><!-- end ngRepeat: d in dataSvg --><tr ng-repeat="d in dataSvg" class="ng-scope">
+                    <td class="ng-binding">MAZDA </td>
+                    <td class="ng-binding">4139</td>
+                  </tr><!-- end ngRepeat: d in dataSvg --><tr ng-repeat="d in dataSvg" class="ng-scope">
+                    <td class="ng-binding">MERCEDES BENZ </td>
+                    <td class="ng-binding">1087</td>
+                  </tr><!-- end ngRepeat: d in dataSvg --><tr ng-repeat="d in dataSvg" class="ng-scope">
+                    <td class="ng-binding">MINI </td>
+                    <td class="ng-binding">448</td>
+                  </tr><!-- end ngRepeat: d in dataSvg --><tr ng-repeat="d in dataSvg" class="ng-scope">
+                    <td class="ng-binding">NISSAN </td>
+                    <td class="ng-binding">28530</td>
+                  </tr><!-- end ngRepeat: d in dataSvg --><tr ng-repeat="d in dataSvg" class="ng-scope">
+                    <td class="ng-binding">PEUGEOT </td>
+                    <td class="ng-binding">623</td>
+                  </tr><!-- end ngRepeat: d in dataSvg --><tr ng-repeat="d in dataSvg" class="ng-scope">
+                    <td class="ng-binding">RENAULT </td>
+                    <td class="ng-binding">1998</td>
+                  </tr><!-- end ngRepeat: d in dataSvg --><tr ng-repeat="d in dataSvg" class="ng-scope">
+                    <td class="ng-binding">SMART </td>
+                    <td class="ng-binding">60</td>
+                  </tr><!-- end ngRepeat: d in dataSvg --><tr ng-repeat="d in dataSvg" class="ng-scope">
+                    <td class="ng-binding">SUBARU </td>
+                    <td class="ng-binding">144</td>
+                  </tr><!-- end ngRepeat: d in dataSvg --><tr ng-repeat="d in dataSvg" class="ng-scope">
+                    <td class="ng-binding">SUZUKI </td>
+                    <td class="ng-binding">1146</td>
+                  </tr><!-- end ngRepeat: d in dataSvg --><tr ng-repeat="d in dataSvg" class="ng-scope">
+                    <td class="ng-binding">TOYOTA </td>
+                    <td class="ng-binding">6993</td>
+                  </tr><!-- end ngRepeat: d in dataSvg --><tr ng-repeat="d in dataSvg" class="ng-scope">
+                    <td class="ng-binding">AUDI </td>
+                    <td class="ng-binding">1208</td>
+                  </tr><!-- end ngRepeat: d in dataSvg --><tr ng-repeat="d in dataSvg" class="ng-scope">
+                    <td class="ng-binding">PORSCHE </td>
+                    <td class="ng-binding">94</td>
+                  </tr><!-- end ngRepeat: d in dataSvg --><tr ng-repeat="d in dataSvg" class="ng-scope">
+                    <td class="ng-binding">SEAT </td>
+                    <td class="ng-binding">1926</td>
+                  </tr><!-- end ngRepeat: d in dataSvg --><tr ng-repeat="d in dataSvg" class="ng-scope">
+                    <td class="ng-binding">VOLKSWAGEN </td>
+                    <td class="ng-binding">15938</td>
+                  </tr><!-- end ngRepeat: d in dataSvg --><tr ng-repeat="d in dataSvg" class="ng-scope">
+                    <td class="ng-binding">VOLVO </td>
+                    <td class="ng-binding">103</td>
+                  </tr><!-- end ngRepeat: d in dataSvg -->
+                </tbody></table></pre>
+              <div class="row">
+                <small class="col-xs-6 pull-left">Fuente: Asociación Mexicana de la Industria Automotriz</small>
+                <small class="col-xs-6 pull right text-right">
+                  <a href="assets/data/AutosVendidosFeb2016.csv">CSV
+                    <span class="glyphicon glyphicon-download"></span>
+                  </a>
+                </small>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-xs-12">
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <code>#chart-svg</code>
+            </div>
+            <div class="panel-body">
+              <div id="chart-svg"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <hr>
+      <h4>Más ejemplos en
+        <a href="https://github.com/mbostock/d3/wiki/Gallery">https://github.com/mbostock/d3/wiki/Gallery</a>
+      </h4>
+      <hr>
+    </div>
+  </div>
+  </div>
+  <!-- scripts -->
+  <script type="text/javascript" src="node_modules/d3/build/d3.js"></script>
+  <script type="text/javascript" src="js/ejemplosd3_cont.js"></script>
+</body>
+</html>
