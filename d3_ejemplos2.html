@@ -42,12 +42,17 @@
         <div class="panel-heading">Métodos</div>
         <div class="panel-body">
           <pre>d3.csv(url, callback);
-            d3.tsv(url, callback);
-            d3.json(url, callback);
-            d3.dsv(url, callback);</pre>
+d3.tsv(url, callback);
+d3.json(url, callback);
+d3.dsv(url, callback);
+d3.html(url, callback);
+d3.text(url, callback);
+d3.xml(url, callback);
+           </pre>
           <p>El callback siempre recibe el arreglo de datos finales y si existió algun error</p>
-          <pre>function(data, error){  // Qué hago con los datos?
-          }</pre>
+          <pre>function(data){  
+  // Qué hago con los datos?
+}</pre>
         </div>
       </div>
       <h3>Trabajando con divs</h3>

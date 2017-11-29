@@ -24,8 +24,12 @@
 //   .text(function (d, i) {
 //     return d.nombre + ': ' + d.porcentaje;
 //   });
-// 
-// 
+
+
+
+
+
+
 // // Leyendo datos desde un archivo (CSV)
 // 
 // d3.csv('assets/data/CausasDeMortalidadDF2013.csv', function (data) {
@@ -44,9 +48,12 @@
 //       return d.Defunciones;
 //     });
 // });
-// 
-// 
-// 
+
+
+
+
+
+
 // // ESCALAS
 // var escalaLineal = d3.scaleLinear()
 //   .range([0, 100])
@@ -60,10 +67,12 @@
 // var escalaDeBanda = d3.scaleBand()
 //   .rangeRound([0, 100])
   // .domain(['domingo', 'lunes', 'martes', 'miércoles', 'jueves', 'viernes', 'sábado']);
-// 
-// 
-// 
-// 
+
+
+
+
+
+  
 // // Gráfica con escalas de tamaño y color 
 // 
 // d3.csv('assets/data/CausasDeMortalidadDF2013.csv', function (d) {
