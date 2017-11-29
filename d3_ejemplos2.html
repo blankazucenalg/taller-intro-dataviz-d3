@@ -3,6 +3,13 @@
 <head>
   <title>Ejemplos d3</title>
   <link rel="stylesheet" type="text/css" href="css/styles.css">
+  <style>
+    #charts #ejercicio2 {
+      min-height: 200px;
+      background: black url('../assets/images/solar.jpg') center;
+      background-size: cover;
+    }
+  </style>
 </head>
 <body>
   <div class="container">
@@ -13,21 +20,8 @@
       <div class="row">
         <div class="col-xs-12">
           <h4>Ejemplo 1</h4>
-        </div>
-        <div class="col-xs-12">
-          <div class="panel panel-default">
-            <div class="panel-heading">
-              <code>#ejemplo1</code>
-            </div>
-            <div class="panel-body" id="ejemplo1"></div>
-          </div>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-xs-12">
-          <h4>Ejercicio 1</h4>
           <ul>
-            <li>Retomando el ejercicio de la sección anterior. A cada circulo ponle como valor de su propiedad width y height,
+            <li>Retomando el ejercicio de la sección anterior. A cada barra ponle como valor de su propiedad width
               el valor del dato. Recuerda que las propiedades se modifican usando el método
               <code>.attr(name, value);</code>
             </li>
@@ -36,9 +30,9 @@
         <div class="col-xs-12">
           <div class="panel panel-default">
             <div class="panel-heading">
-              <code>#ejercicio1</code>
+              <code>#ejemplo1</code>
             </div>
-            <div class="panel-body" id="ejercicio1"></div>
+            <div class="panel-body" id="ejemplo1"></div>
           </div>
         </div>
       </div>
@@ -156,6 +150,24 @@
       </div>
       <div class="row">
         <div class="col-xs-12">
+          <h4>Manipulación de arreglos</h4>
+          <p>
+            <a href="https://github.com/d3/d3-array">https://github.com/d3/d3-array</a>
+          </p>
+        </div>
+        <div class="col-xs-12">
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <code>#manejoArreglos</code>
+            </div>
+            <div class="panel-body">
+              <div id="manejoArreglos"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-12">
           <h4>Eventos</h4>
           <p>
             <a href="https://developer.mozilla.org/en-US/docs/Web/Events#Standard_events">https://developer.mozilla.org/en-US/docs/Web/Events#Standard_events</a>
@@ -260,6 +272,7 @@
       <h3>Gráficas reutilizables como una función</h3>
       <div class="row">
         <div class="col-xs-12">
+          <a href="https://github.com/Caged/d3-tip">https://github.com/Caged/d3-tip</a>
           <h4>Marcas de autos más vendidos en febrero de 2016</h4>
           <div class="panel panel-default">
             <div class="panel-heading">Data.csv</div>
@@ -387,6 +400,7 @@
   </div>
   <!-- scripts -->
   <script type="text/javascript" src="node_modules/d3/build/d3.js"></script>
+  <script type="text/javascript" src="node_modules/d3-tip/index.js"></script>
   <script type="text/javascript" src="js/ejemplosd3_cont.js"></script>
 </body>
 </html>
