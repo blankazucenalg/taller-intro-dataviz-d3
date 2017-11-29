@@ -12,39 +12,39 @@
 /***************************
  *        SCATTER
  ***************************/
-// var config = {
-//   'bindTo': '#scatter',
-//   'size': {
-//     'width': 960,
-//     'height': 500,
-//     'margin': {
-//       top: 20,
-//       right: 20,
-//       bottom: 30,
-//       left: 40
-//     },
-//   }
-// }
-// var chart = dbox.chart(config)
-//   .data({
-//     'tsv': 'assets/data/data.tsv'
-//   })
-//   .layer(dbox.scatter)
-//     .x('sepalWidth')
-//     .y('sepalLength')
-//     .color('species')
-//     .tip(function(d){
-//       return d.color + ' (' + d.x + ',' + d.y + ')';
-//     })
-//   .end()
-//   .draw();
+var config = {
+  'bindTo': '#scatter',
+  'size': {
+    'width': 960,
+    'height': 500,
+    'margin': {
+      top: 20,
+      right: 20,
+      bottom: 30,
+      left: 40
+    },
+  }
+}
+var chart = dbox.chart(config)
+  .data({
+    'tsv': 'assets/data/data.tsv'
+  })
+  .layer(dbox.scatter)
+    .x('sepalWidth')
+    .y('sepalLength')
+    .color('species')
+    .tip(function(d){
+      return d.color + ' (' + d.x + ',' + d.y + ')';
+    })
+  .end()
+  .draw();
 
 
 /***************************
  *        TREEMAP
  ***************************/
 // var colors = ['#562B4F', '#742C6A', '#B23733', '#DC8933'];
-// 
+
 // var config = {
 //   'size': {
 //     'width': 600,
@@ -63,14 +63,14 @@
 //     'enabled': false
 //   }
 // };
-// 
+
 // dbox.chart(config)
 //   .bindTo('#treemap')
 //   .data({
 //     'tsv': 'assets/data/test.tsv'
 //   })
 //   .layer(dbox.treemap)
-//     .nestBy(['variable', 'category'])
+//     .nestBy(['subcategory'])
 //     .size('number')
 //     .format(',.0f')
 //   .end()
@@ -108,12 +108,14 @@
 //       'geoDivision': 'states',
 //       'quantiles': {
 //         'buckets': 5,
-//         'colors': ['#e3f0cd', '#cae2a1', '#b1d375', '#98c449', '#7fb61d'] 
+        // 'colors': ['#e3f0cd', '#cae2a1', '#b1d375', '#98c449', '#7fb61d'] 
 //       }
 //     }
 //   },
 //   'events': {
-//     'load': function(chart) {}
+//     'load': function(chart) {
+//       
+//     }
 //   }
 // }
 // 
