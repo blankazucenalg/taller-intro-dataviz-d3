@@ -90,3 +90,9 @@ body {
 .square {
     background-color: #eee;
 }
+
+#charts #ejercicio2 {
+  min-height: 200px;
+  background: black url('../assets/images/solar.jpg') center;
+  background-size: cover;
+}
